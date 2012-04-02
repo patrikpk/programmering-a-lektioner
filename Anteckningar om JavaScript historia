@@ -1,0 +1,128 @@
+introduktion-till-javascript.markdown
+# JavaScript #
+Viktigaste du behöver veta?
+
+ * Du hittar bra information på [Mozilla Devoloper Network](https://developer.mozilla.org/en/JavaScript/)
+  * Mycket annat om JavaScript på nätet är dålig information och vilseledande.
+   * Lättläst, men längre, kod **sparar jobb** jämfört med kort och svärläst kod.
+
+  ## kort historik ##
+
+ * Netsape vill ha skript i webbläsaren
+ * Brenden Eich får bara _två veckor_ på sig, innan första verisionen presenterades
+ * kallades först _mocha_, sedan _LiveScript_ (sept 1995)
+ * Bytte namn av **marknadsföringsskäl** till JavaScript (dec 1995)
+ * _namnet_ ägs av Oracle, som köpt Sun, där java uppfanns
+ * Microsoft kallar sin verision JScript
+
+## Användning ##
+
+ * I webbläsaren: "Client side scripting"
+ * På servern: "server side scripting" (ovanligt fram tills 2010)
+ * I andra program, som _makrospråk_ (adobe photoshop, m. fl. open/libre Office)
+ * I flash under namnet _ActionScript_
+ * För utveckling av _widgets_ och mobila _appar_
+ *etc.
+
+JavaScript != "Java light"
+
+## Standardisering ##
+HTML, CSS och DOM standardiseras av **W3C**.
+
+JavaScript av **ECMA** (European Computer Manufacturers Association)
+
+Därav namnet ECMAScript.
+
+## versioner ##
+
+Netscape, sedan Mozilla, har alltid varit drivande i utvecklingen och skapat _de facto_
+implementeringen som andra följer.
+
+[detaljerad tabell på Wikipedia](http://en.wikipedia.org/wiki/JavaScript#Verisions
+
+
+Alla Webbläsare från 2012 och framåt stödjer i **mycket** god utsträckning _ECMAScript 5.1
+
+Nästa version av standarden går under arbetsnamnet _ ECMAScript Harmony_
+
+let
+
+## JavaScript kontra DOM och BOM ##
+
+[JavaScript körs i en **värdmiljö**] (https://developer.mozilla.org/en(JavaScript_technologies_overview) ("host object")
+vanligtvis en webbläsare.
+
+för att man ska kunna göra något, så erbjuder värden gränssnitt = **api** = application program interface.
+
+de delar av värdmiljön som direkt relaterar till webbläsaren som sådan kallas BOM = Browser Object Model
+
+De delar av värdmiljön som direkt relaterar till dokumentet som visas _i_ webbläsaren kallas DOM = Document Object Model.
+
+exempel - Dettar är DOM och BOM:
+
+	document.getElementbyID("foo")  // hitta elementet med id = foo
+	window.setinInterval(foo, 100)  // kör funktionen foo var 100:e millisekund
+	window.location.href            // adressen till sidan där man är
+	elem.addEventListener()         // lägg till en händelselyssnare
+
+detta är "ren" JavaScript
+
+	var foo = 53
+	var elev = { namn: "Kalle" , klass: "9c" };
+
+## DOM som det stora problemet ##
+
+"Best viewed in" var målet - inte standarder.
+
+Idealet för standarder: "write once run everywhere"
+
+fram till version 3.0 så hade Netscape navigator såpass dominerande ställning att alla härmade den.
+
+dit hör **händelsehanterare** (event handlers):
+
+	element.oneclick = function;
+
+## hur hantera detta##
+
+### dålig lösning: brwsersniffa ###
+
+lär dig känna igen denna lösning, för om du googlar finns det mängder av skräp på nätet.
+
+	if( navigator.appName.indexOf() ) {}
+	if ( document.layers ) {}
+
+### tre bättre lösningar ###
+
+1. kapacitetsdetektera (object detection, capability detection)
+2. använd ettbibliotek, typ [JQuery](http://jquery.com/).
+3. ignorera alla gamla webbläsare
+
+## Ajax ##
+
+somliga webbplatser kan uppdatera en **del** av sidan med ny information som skickats från servern.
+
+## God praxis ##
+
+**DHTML** - JavaScript på 90 talet bidrog till att göra webben sämre.
+
+1. HTML styr upp **innehåll**
+2. CSS styr upp **utseende**
+3. DOM och JavaScript styr upp **beteende**
+
+det finns också varningssignaler du bör känna till:
+
+	<body onload="foo()"> dvs. HTML och JavaScrtipt blandas document.write()
+	eval()
+	<script language="javascript">   Attributet language är föråldrat och icke-standard.
+
+### exempel på dålig information ###
+
+för att gömma JavaScript för webbläsare som fanns på marnaden före 1996 så användes följande knep:
+
+	<script>
+	<!--
+	// JS kod här dold HTML-kommentarer
+	-->
+	</script>
+
+Det finns fortfarande artiklar och instruktionsfilmer på youtube som 15 år senare säger att du *måste* använda detta knep!

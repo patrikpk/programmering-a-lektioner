@@ -1,0 +1,48 @@
+introduktion-till-javascript.markdown
+# JavaScript #
+Viktigaste du behöver veta?
+
+ * Du hittar bra information på [Mozilla Devoloper Network](https://developer.mozilla.org/en/JavaScript/)
+  * Mycket annat om JavaScript på nätet är dålig information och vilseledande.
+   * Lättläst, men längre, kod **sparar jobb** jämfört med kort och svärläst kod.
+
+  ## kort historik ##
+
+ * Netsape vill ha skript i webbläsaren
+ * Brenden Eich får bara _två veckor_ på sig, innan första verisionen presenterades
+ * kallades först _mocha_, sedan _LiveScript_ (sept 1995)
+ * Bytte namn av **marknadsföringsskäl** till JavaScript (dec 1995)
+ * _namnet_ ägs av Oracle, som köpt Sun, där java uppfanns
+ * Microsoft kallar sin verision JScript
+
+## Användning ##
+
+ * I webbläsaren: "Client side scripting"
+ * På servern: "server side scripting" (ovanligt fram tills 2010)
+ * I andra program, som _makrospråk_ (adobe photoshop, m. fl. open/libre Office)
+ * I flash under namnet _ActionScript_
+ * För utveckling av _widgets_ och mobila _appar_
+ *etc.
+
+JavaScript != "Java light"
+
+## Standardisering ##
+HTML, CSS och DOM standardiseras av **W3C**.
+
+JavaScript av **ECMA** (European Computer Manufacturers Association)
+
+Därav namnet ECMAScript.
+
+## versioner ##
+
+Netscape, sedan Mozilla, har alltid varit drivande i utvecklingen och skapat _de facto_
+implementeringen som andra följer.
+
+[detaljerad tabell på Wikipedia](http://en.wikipedia.org/wiki/JavaScript#Verisions
+
+
+Alla Webbläsare från 2012 och framåt stödjer i **mycket** god utsträckning _ECMAScript 5.1
+
+Nästa version av standarden går under arbetsnamnet _ ECMAScript Harmony_
+
+let
